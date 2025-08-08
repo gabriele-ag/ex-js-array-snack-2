@@ -120,6 +120,18 @@ console.log(books)
 // Calcola la somma delle età (agesSum) usando reduce.
 // Stampa in console l’età media degli autori dei libri.
 
+const ages = books.map(book => book.author.age)
+
+const agesSum = ages.reduce((acc, numero) => {
+    return acc + numero
+}, 0)
+
+const media = agesSum / ages.length
+
+console.log(ages)
+console.log(agesSum)
+console.log(media)
+
 
 
 
