@@ -59,4 +59,10 @@ const longBooks = books.filter(book => {
     return book.pages > 300;
 })
 
+const longBooksTitles = longBooks.map(book => book.title)
+
+const allTitles = books.map(book => book.title)
+
 console.log(longBooks)
+console.log(longBooksTitles)
+console.log(allTitles)
