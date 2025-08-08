@@ -105,13 +105,13 @@ const authors = books.map(book => book.author.name)
 
 const areAuthorsAdults = books.every(book => book.author.age >= 18)
 
-const bookOrdered = books.sort((a, b) => areAuthorsAdults ? a.author.age - b.author.age : b.author.age - a.author.age)
+const bookOrdered = [...books].sort((a, b) => areAuthorsAdults ? a.author.age - b.author.age : b.author.age - a.author.age)
 
 
 
 console.log(authors)
 console.log(areAuthorsAdults)
-console.log(books)
+console.log(bookOrdered)
 
 
 // Snack 4
@@ -156,5 +156,19 @@ getBooks([2, 13, 7, 21, 19])
 .catch(error => console.error(error))
 
 
+// Snack 6
 
+// Crea una variabile booleana (areThereAvailableBooks) per verificare se c’è almeno un libro disponibile.
+// Crea un array (booksByPrice) con gli elementi di books ordinati in base al prezzo (crescente).
+// Ordina l’array booksByPricein base alla disponibilità (prima quelli disponibili), senza creare un nuovo array.
+
+
+const areThereAvailableBooks = books.some(book => book.available === true)
+
+const booksByPrice = [...books].sort((a, b) => a.price.localeCompare(b.price))
+
+booksByPrice.sort((a, b) => (b.available === true) - (a.available === true))
+
+console.log(areThereAvailableBooks)
+console.log(booksByPrice)
 
