@@ -165,7 +165,7 @@ getBooks([2, 13, 7, 21, 19])
 
 const areThereAvailableBooks = books.some(book => book.available === true)
 
-const booksByPrice = [...books].sort((a, b) => a.price.localeCompare(b.price))
+const booksByPrice = [...books].sort((a, b) => b.price.localeCompare(a.price))
 
 booksByPrice.sort((a, b) => (b.available === true) - (a.available === true))
 
